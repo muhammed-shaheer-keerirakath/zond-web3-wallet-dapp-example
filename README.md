@@ -20,17 +20,28 @@ The application renders 3 sections:
 
 Communication between a dApp and Zond Web3 Wallet happens via JSON-RPC API requests.
 
-### zond_requestAccounts
+### Restricted Methods
 
-The zond_requestAccounts method is an API call method that prompts the user to connect their Zond account(s) to the dApp.
+The methods when called, asks for user approval before executing. A request screen will be presented with an option to either approve or reject the request.
 
-| **Request**                                                                                            | **Response**                                                                                                                             | **Example**                                                        |
-| ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| <pre><code>{<br> "jsonrpc": "2.0",<br> "method": "zond_requestAccounts",<br> "id": 1<br>}</code></pre> | <pre><code>{<br> "jsonrpc": "2.0",<br> "id": 1,<br> "result": ["0x1234567890abcdef1234567890abcdef12345678"]<br>}</code></pre>           | `"result": ["0x1234567890abcdef1234567890abcdef12345678"]`         |
-|                                                                                                        | <pre><code>{<br> "jsonrpc": "2.0",<br> "id": 1,<br> "error": { "code": 4001, "message": "User rejected the request." }<br>}</code></pre> | `"error": {"code": 4001, "message": "User rejected the request."}` |
+#### 1. zond_requestAccounts
 
-The following code is used to connect to Zond Web3 Wallet in the `connectWallet` method of [WalletProvider.tsx](src/components/WalletProvider.tsx) file.
+A method that prompts the user to connect their Zond account(s) with the dApp.
+
+##### Request
 
 ```typescript
-const accounts = await provider.request({ method: "zond_requestAccounts" });
+const accounts = await provider.request({
+  method: "zond_requestAccounts",
+  params: [],
+});
+```
+
+##### Response
+
+```json
+[
+  "Z208318ecd68f26726CE7C54b29CaBA94584969B6",
+  "Z20E7Bde67f00EA38ABb2aC57e1B0DD93f518446c"
+]
 ```
