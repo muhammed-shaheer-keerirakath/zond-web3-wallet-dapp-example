@@ -141,6 +141,31 @@ A method for creating a new message call immediately.
 > "0x"
 > ```
 
+#### 4. zond_estimateGas
+
+A method for calculating the estimate of how much gas is necessary for the transaction.
+
+- ##### Request
+
+> ```typescript
+> const gas = await provider.request({
+>   method: "zond_estimateGas",
+>   params: [
+>     {
+>       from: "Z208318ecd68f26726CE7C54b29CaBA94584969B6",
+>       to: "Z20B714091cF2a62DADda2847803e3f1B9D2D3779",
+>       value: "0x7",
+>     },
+>   ],
+> });
+> ```
+
+- ##### Response
+
+> ```json
+> "0x5208"
+> ```
+
 #### 6. zond_getBlockByNumber
 
 A method that returns the block information by number.
