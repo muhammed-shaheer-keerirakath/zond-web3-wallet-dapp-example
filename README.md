@@ -24,6 +24,11 @@ Communication between a dApp and Zond Web3 Wallet happens via JSON-RPC API reque
 
 The methods when called, asks for user approval before executing. A request screen will be presented with an option to either approve or reject the request.
 
+| No. | Method                                          |
+| --- | ----------------------------------------------- |
+| 1   | [zond_requestAccounts](#1-zond_requestaccounts) |
+| 2   | [zond_sendTransaction](#2-zond_sendTransaction) |
+
 #### 1. zond_requestAccounts
 
 A method that prompts the user to connect their Zond account(s) with the dApp.
@@ -77,6 +82,19 @@ A method that prompts the user to make a transaction like ZND transfer, contract
 ### Unrestricted Methods
 
 The methods when called, silently gives back response without needing any interaction from the user.
+
+| No. | Method                                                      |
+| --- | ----------------------------------------------------------- |
+| 1   | [zond_accounts](#1-zond_accounts)                           |
+| 2   | [zond_blockNumber](#2-zond_blockNumber)                     |
+| 3   | [zond_call](#3-zond_call)                                   |
+| 4   | [zond_estimateGas](#4-zond_estimateGas)                     |
+| 5   | [zond_getBalance](#5-zond_getBalance)                       |
+| 6   | [zond_getBlockByNumber](#6-zond_getBlockByNumber)           |
+| 7   | [zond_getCode](#7-zond_getCode)                             |
+| 8   | [zond_getTransactionByHash](#8-zond_getTransactionByHash)   |
+| 9   | [zond_getTransactionReceipt](#9-zond_getTransactionReceipt) |
+| 10  | [wallet_revokePermissions](#10-wallet_revokePermissions)    |
 
 #### 1. zond_accounts
 
