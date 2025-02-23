@@ -28,20 +28,48 @@ The methods when called, asks for user approval before executing. A request scre
 
 A method that prompts the user to connect their Zond account(s) with the dApp.
 
-##### Request
+- ##### Request
 
-```typescript
-const accounts = await provider.request({
-  method: "zond_requestAccounts",
-  params: [],
-});
-```
+> ```typescript
+> const accounts = await provider.request({
+>   method: "zond_requestAccounts",
+>   params: [],
+> });
+> ```
 
-##### Response
+- ##### Response
 
-```json
-[
-  "Z208318ecd68f26726CE7C54b29CaBA94584969B6",
-  "Z20E7Bde67f00EA38ABb2aC57e1B0DD93f518446c"
-]
-```
+> ```json
+> [
+>   "Z208318ecd68f26726CE7C54b29CaBA94584969B6",
+>   "Z20E7Bde67f00EA38ABb2aC57e1B0DD93f518446c"
+> ]
+> ```
+
+#### 2. zond_sendTransaction
+
+A method that prompts the user to make a transaction like ZND transfer, contract deployment and contract interaction.
+
+- ##### Request
+
+> ```typescript
+> const txHash = await provider.request({
+>   method: "zond_sendTransaction",
+>   params: [
+>     {
+>       to: "Z20E7Bde67f00EA38ABb2aC57e1B0DD93f518446c",
+>       from: "Z208318ecd68f26726CE7C54b29CaBA94584969B6",
+>       gas: "0x51bc",
+>       value: "0x33",
+>       data: "0x",
+>       gasPrice: "0x777",
+>     },
+>   ],
+> });
+> ```
+
+- ##### Response
+
+> ```json
+> "0x3e306b5a5a37532e1734503f7d2427a86f2c992fbe471f5be403b9f734e661c5"
+> ```
