@@ -94,7 +94,7 @@ A method that returns the list of accounts that the user has approved to connect
 - ##### Response
 
 > ```json
-> ["0xa77392123a1085f75e62eec7dea7e0e1e5142d5f"]
+> ["Z20B714091cF2a62DADda2847803e3f1B9D2D3779"]
 > ```
 
 #### 2. zond_blockNumber
