@@ -284,3 +284,26 @@ A method for returning the receipt of a transaction by transaction hash.
 >   ....
 > }
 > ```
+
+#### 10. wallet_revokePermissions
+
+A method for revoking the previously approved permissions for the dApp.
+
+- ##### Request
+
+> ```typescript
+> await provider.request({
+>   method: "wallet_revokePermissions",
+>   params: [
+>     {
+>       zond_accounts: {},
+>     },
+>   ],
+> });
+> ```
+
+- ##### Response
+
+> ```json
+> null
+> ```
