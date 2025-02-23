@@ -78,7 +78,26 @@ A method that prompts the user to make a transaction like ZND transfer, contract
 
 The methods when called, silently gives back response without needing any interaction from the user.
 
-#### 1. zond_getBlockByNumber
+#### 1. zond_accounts
+
+A method that returns the list of accounts that the user has approved to connect.
+
+- ##### Request
+
+> ```typescript
+> const accounts = await provider.request({
+>   method: "zond_accounts",
+>   params: [],
+> });
+> ```
+
+- ##### Response
+
+> ```json
+> ["0xa77392123a1085f75e62eec7dea7e0e1e5142d5f"]
+> ```
+
+#### 2. zond_getBlockByNumber
 
 A method that returns the block information by number.
 
@@ -100,5 +119,6 @@ A method that returns the block information by number.
 >   "mixHash": "0x24900fb3da77674a861c428429dce0762707ecb6052325bbd9b3c64e74b5af9d",
 >   "parentHash": "0x1f68ac259155e2f38211ddad0f0a15394d55417b185a93923e2abe71bb7a4d6d",
 >   "nonce": "0x378da40ff335..."
+>   ....
 > }
 > ```
