@@ -73,3 +73,32 @@ A method that prompts the user to make a transaction like ZND transfer, contract
 > ```json
 > "0x3e306b5a5a37532e1734503f7d2427a86f2c992fbe471f5be403b9f734e661c5"
 > ```
+
+### Unrestricted Methods
+
+The methods when called, silently gives back response without needing any interaction from the user.
+
+#### 1. zond_getBlockByNumber
+
+A method that returns the block information by number.
+
+- ##### Request
+
+> ```typescript
+> const block = await provider.request({
+>   method: "zond_getBlockByNumber",
+>   params: ["0x324c", false],
+> });
+> ```
+
+- ##### Response
+
+> ```json
+> {
+>   "number": "0x68b3",
+>   "hash": "0xd5f1812548be429cbdc6376b29611fc49e06f1359758c4ceaaa3b393e2239f9c",
+>   "mixHash": "0x24900fb3da77674a861c428429dce0762707ecb6052325bbd9b3c64e74b5af9d",
+>   "parentHash": "0x1f68ac259155e2f38211ddad0f0a15394d55417b185a93923e2abe71bb7a4d6d",
+>   "nonce": "0x378da40ff335..."
+> }
+> ```
