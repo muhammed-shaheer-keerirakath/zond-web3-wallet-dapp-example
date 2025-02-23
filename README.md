@@ -256,3 +256,31 @@ A method for returning the information about a transaction requested by transact
 >   ....
 > }
 > ```
+
+#### 9. zond_getTransactionReceipt
+
+A method for returning the receipt of a transaction by transaction hash.
+
+- ##### Request
+
+> ```typescript
+> const tx = await provider.request({
+>   method: "zond_getTransactionReceipt",
+>   params: [
+>     "0x504ce587a65bdbdb6414a0c6c16d86a04dd79bfcc4f2950eec9634b30ce5370f",
+>   ],
+> });
+> ```
+
+- ##### Response
+
+> ```json
+> {
+>   "blockHash": "0xe7212a92cfb9b06addc80dec2a0dfae9ea94fd344efeb157c41e12994fcad60a",
+>   "blockNumber": "0x77",
+>   "contractAddress": null,
+>   "cumulativeGasUsed": "0x5208",
+>   "from": "Z20B714091cF2a62DADda2847803e3f1B9D2D3779"
+>   ....
+> }
+> ```
