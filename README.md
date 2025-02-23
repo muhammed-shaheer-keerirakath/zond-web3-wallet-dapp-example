@@ -97,7 +97,26 @@ A method that returns the list of accounts that the user has approved to connect
 > ["0xa77392123a1085f75e62eec7dea7e0e1e5142d5f"]
 > ```
 
-#### 2. zond_getBlockByNumber
+#### 2. zond_blockNumber
+
+A method that returns the number of most recent block.
+
+- ##### Request
+
+> ```typescript
+> const blockNumber = await window.ethereum.request({
+>   method: "zond_blockNumber",
+>   params: [],
+> });
+> ```
+
+- ##### Response
+
+> ```json
+> "0x3345"
+> ```
+
+#### 6. zond_getBlockByNumber
 
 A method that returns the block information by number.
 
