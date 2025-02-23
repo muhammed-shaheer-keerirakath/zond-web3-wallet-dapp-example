@@ -104,7 +104,7 @@ A method that returns the number of most recent block.
 - ##### Request
 
 > ```typescript
-> const blockNumber = await window.ethereum.request({
+> const blockNumber = await provider.request({
 >   method: "zond_blockNumber",
 >   params: [],
 > });
@@ -114,6 +114,31 @@ A method that returns the number of most recent block.
 
 > ```json
 > "0x3345"
+> ```
+
+#### 3. zond_call
+
+A method for creating a new message call immediately.
+
+- ##### Request
+
+> ```typescript
+> const result = await provider.request({
+>   method: "zond_call",
+>   params: [
+>     {
+>       to: "Z20E7Bde67f00EA38ABb2aC57e1B0DD93f518446c",
+>       value: "0x7",
+>     },
+>     "latest",
+>   ],
+> });
+> ```
+
+- ##### Response
+
+> ```json
+> "0x"
 > ```
 
 #### 6. zond_getBlockByNumber
