@@ -166,6 +166,25 @@ A method for calculating the estimate of how much gas is necessary for the trans
 > "0x5208"
 > ```
 
+#### 5. zond_getBalance
+
+A method for returning the balance of the given account.
+
+- ##### Request
+
+> ```typescript
+> const balance = await provider.request({
+>   method: "zond_getBalance",
+>   params: ["0xfe3b557e8fb62b89f4916b721be55ceb828dbd73", "latest"],
+> });
+> ```
+
+- ##### Response
+
+> ```json
+> "0x6cfe56f3795885980005"
+> ```
+
 #### 6. zond_getBlockByNumber
 
 A method that returns the block information by number.
